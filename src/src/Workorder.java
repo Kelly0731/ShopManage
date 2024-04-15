@@ -5,10 +5,18 @@ public class Workorder {
     private String customerName;
     private String vin;
     private Date date;
-    private String[] parts;
+    private String[] parts = new String[99];
+    private String[] labor = new String[99];
+    private String[] description = new String[99];
     private int mechanic;
+    private boolean approved = false;
+    private int pointer = 0;
 
-    ////////////Getters
+    public Workorder(int number) {
+        this.number = number;
+    }
+
+    //Getters
 
     public int getNumber() {
         return number;
@@ -34,7 +42,10 @@ public class Workorder {
         return mechanic;
     }
 
-    ////////////Setters
+    public boolean isApproved() {
+        return approved;
+    }
+    //Setters
 
     public void setNumber(int number) {
         this.number = number;
@@ -59,4 +70,17 @@ public class Workorder {
     public void setMechanic(int mechanic) {
         this.mechanic = mechanic;
     }
+
+    public void setApproved(boolean approved) {
+        this.approved = approved;
+    }
+
+    //Methods
+    public void addItem(String p, String l, String d){
+        parts[pointer] = p;
+        labor[pointer] = l;
+        description[pointer] = d;
+        pointer++;
+    }
 }
+
