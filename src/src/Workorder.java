@@ -1,6 +1,7 @@
 import java.util.Date;
 
 public class Workorder {
+    private int number;
     private String customerName;
     private String vin;
     private Date date;
@@ -8,6 +9,11 @@ public class Workorder {
     private int mechanic;
 
     ////////////Getters
+
+    public int getNumber() {
+        return number;
+    }
+
     public String getCustomerName() {
         return customerName;
     }
@@ -29,6 +35,11 @@ public class Workorder {
     }
 
     ////////////Setters
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
