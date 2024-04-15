@@ -5,7 +5,9 @@ public class Workorder {
     private String vin;
     private Date date;
     private String[] parts;
+    private int mechanic;
 
+    ////////////Getters
     public String getCustomerName() {
         return customerName;
     }
@@ -22,6 +24,11 @@ public class Workorder {
         return parts;
     }
 
+    public int getMechanic() {
+        return mechanic;
+    }
+
+    ////////////Setters
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
@@ -36,5 +43,9 @@ public class Workorder {
 
     public void setParts(String[] parts) {
         this.parts = parts;
+    }
+
+    public void setMechanic(int mechanic) {
+        this.mechanic = mechanic;
     }
 }
