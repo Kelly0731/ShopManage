@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Date;
 
 public class Workorder {
@@ -6,17 +7,24 @@ public class Workorder {
     private String vin;
     private Date date;
     private String[] parts = new String[99];
-    private String[] labor = new String[99];
+    private double[] labor = new double[99];
     private String[] description = new String[99];
+    private double[] partPrice = new double[99];
     private int mechanic;
     private boolean approved = false;
     private int pointer = 0;
+    private double wage;
 
     public Workorder(int number) {
         this.number = number;
     }
 
     //Getters
+
+
+    public double getWage() {
+        return wage;
+    }
 
     public int getNumber() {
         return number;
@@ -38,12 +46,24 @@ public class Workorder {
         return parts;
     }
 
+    public String[] getDescription() {
+        return description;
+    }
+
+    public double[] getLabor() {
+        return labor;
+    }
+
     public int getMechanic() {
         return mechanic;
     }
 
     public boolean isApproved() {
         return approved;
+    }
+
+    public double[] getPartPrice() {
+        return partPrice;
     }
     //Setters
 
@@ -75,12 +95,19 @@ public class Workorder {
         this.approved = approved;
     }
 
+    public void setWage(double wage) {
+        this.wage = wage;
+    }
+
     //Methods
-    public void addItem(String p, String l, String d){
+    public void addItem(String p, double pP, double l, String d){
         parts[pointer] = p;
         labor[pointer] = l;
         description[pointer] = d;
+        partPrice[pointer] = pP;
         pointer++;
     }
+
+
 }
 

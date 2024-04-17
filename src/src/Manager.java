@@ -29,6 +29,9 @@ public class Manager {
         Workorder workOrder = new Workorder(number);
         return workOrder;
     }
+    public void setWorkorderWage(Workorder w, double wage){
+        w.setWage(wage);
+    }
 
     public void assignWorkorder(Workorder w, int mechID){
         //logic to assign workorder to a mechanic
