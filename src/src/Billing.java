@@ -8,18 +8,21 @@ public class Billing {
     }
 
     public double billWorkorder(Workorder w) {
-        double[] l = w.getLabor();
-        double[]p = w.getPartPrice();
-        double hoursWorked = 0;
-        double partPrice=0;
-        for(int i = 0; i<l.length; i++){
-            hoursWorked += l[i];
+        if(w.isApproved()) {
+            double[] l = w.getLabor();
+            double[] p = w.getPartPrice();
+            double hoursWorked = 0;
+            double partPrice = 0;
+            for (int i = 0; i < l.length; i++) {
+                hoursWorked += l[i];
+            }
+            for (int i = 0; i < p.length; i++) {
+                partPrice += p[i];
+            }
+            double wage = w.getWage();
+            return calculateBill(partPrice, hoursWorked, wage);
         }
-        for(int i = 0; i<p.length; i++){
-            partPrice += p[i];
-        }
-        double wage = w.getWage();
-        return calculateBill(partPrice, hoursWorked, wage);
+        else return -1;
     }
 
     public double calculateBill(Double parts, Double hoursWorked, double wage) {
