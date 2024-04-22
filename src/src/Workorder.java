@@ -118,7 +118,7 @@ public class Workorder {
         System.out.println("Customer Name: " + customerName);
         System.out.println("Date: " + date + " VIN: " + vin);
         for(int i=0; i<parts.length && parts[i]!=null; i++){
-            System.out.println("Part: " + parts[i] + "P/N: " + partNumber[i] + "Labor: $" + labor[i] + "Description: " + description[i] + "Part Price: $" + partPrice[i]);
+            System.out.println("Part: " + parts[i] + " P/N: " + partNumber[i] + " Labor: $" + labor[i] + " Description: " + description[i] + " Part Price: $" + partPrice[i]);
         }
     }
 }
