@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Manager {
     private int id;
     private String name;
@@ -25,9 +27,12 @@ public class Manager {
     }
 
     //Methods
-    public Workorder createWorkOrder(int number){
-        Workorder workOrder = new Workorder(number);
+    public Workorder createWorkOrder(int number, String customerName, String vin, Date date){
+        Workorder workOrder = new Workorder(number, customerName, vin, date);
         return workOrder;
+    }
+    public void setWorkorderWage(Workorder w, double wage){
+        w.setWage(wage);
     }
 
     public void assignWorkorder(Workorder w, int mechID){

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Date;
 
 public class Workorder {
@@ -6,17 +7,28 @@ public class Workorder {
     private String vin;
     private Date date;
     private String[] parts = new String[99];
-    private String[] labor = new String[99];
+    private double[] labor = new double[99];
     private String[] description = new String[99];
+    private double[] partPrice = new double[99];
+    private int[] partNumber = new int[99];
     private int mechanic;
     private boolean approved = false;
     private int pointer = 0;
+    private double wage;
 
-    public Workorder(int number) {
+    public Workorder(int number, String customerName, String vin, Date date) {
         this.number = number;
+        this.customerName = customerName;
+        this.vin = vin;
+        this.date = date;
     }
 
     //Getters
+
+
+    public double getWage() {
+        return wage;
+    }
 
     public int getNumber() {
         return number;
@@ -38,12 +50,24 @@ public class Workorder {
         return parts;
     }
 
+    public String[] getDescription() {
+        return description;
+    }
+
+    public double[] getLabor() {
+        return labor;
+    }
+
     public int getMechanic() {
         return mechanic;
     }
 
     public boolean isApproved() {
         return approved;
+    }
+
+    public double[] getPartPrice() {
+        return partPrice;
     }
     //Setters
 
@@ -75,12 +99,27 @@ public class Workorder {
         this.approved = approved;
     }
 
+    public void setWage(double wage) {
+        this.wage = wage;
+    }
+
     //Methods
-    public void addItem(String p, String l, String d){
+    public void addItem(String p, int pN, double pP, double l, String d){
         parts[pointer] = p;
+        partNumber[pointer] = pN;
         labor[pointer] = l;
         description[pointer] = d;
+        partPrice[pointer] = pP;
         pointer++;
+    }
+
+    public void print(){
+        System.out.println("Work Order Number: " + number);
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Date: " + date + " VIN: " + vin);
+        for(int i=0; i<parts.length && parts[i]!=null; i++){
+            System.out.println("Part: " + parts[i] + "P/N: " + partNumber[i] + "Labor: $" + labor[i] + "Description: " + description[i] + "Part Price: $" + partPrice[i]);
+        }
     }
 }
 

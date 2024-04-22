@@ -1,16 +1,32 @@
 public class Billing {
-    private static final double SERVICE_FEE = 50.55;
-    private final double wage;
-    private final double hoursWorked;
+    private double SERVICE_FEE;
+    private double markup;
 
-    public Billing(double hoursWorked, double wage) {
-        this.hoursWorked = hoursWorked;
-        this.wage = wage;
-        calculateBill(hoursWorked, wage);
+    public Billing(double sf, double m){
+        SERVICE_FEE = sf;
+        markup = m;
     }
 
-    public double calculateBill(double hoursWorked, double wage) {
-        return hoursWorked * wage + SERVICE_FEE;
+    public double billWorkorder(Workorder w) {
+        if(w.isApproved()) {
+            double[] l = w.getLabor();
+            double[] p = w.getPartPrice();
+            double hoursWorked = 0;
+            double partPrice = 0;
+            for (int i = 0; i < l.length; i++) {
+                hoursWorked += l[i];
+            }
+            for (int i = 0; i < p.length; i++) {
+                partPrice += p[i];
+            }
+            double wage = w.getWage();
+            return calculateBill(partPrice, hoursWorked, wage);
+        }
+        else return -1;
+    }
+
+    public double calculateBill(Double parts, Double hoursWorked, double wage) {
+        return (parts * markup) + (hoursWorked * wage) + SERVICE_FEE;
     }
 }
 
