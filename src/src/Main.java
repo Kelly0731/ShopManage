@@ -15,5 +15,6 @@ public class Main {
         Brian.viewWorkorder(workorder001);
         double total = Jenny.billWorkorder(workorder001);
         System.out.println("Total Due: $" + total);
+        Tamara.print();
     }
 }

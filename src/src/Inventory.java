@@ -32,4 +32,9 @@ public class Inventory {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+  public void print(){
+    System.out.print("Part Name: " + partName);
+    System.out.print(", Part Number: " + partNumber);
+    System.out.println(", Quantity: " + quantity);
+  }
 }
