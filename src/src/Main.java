@@ -1,7 +1,12 @@
+import java.text.ParseException;
 import java.util.Date;
 
 public class Main {
-    public static void main(String[] args) {
+  public static void main(String[] args) throws ParseException {
+    InventoryManager inventoryManager = new InventoryManager();
+    ShopManageUI ui = new ShopManageUI(inventoryManager);
+    ui.start();
+      /*
         Manager Dave = new Manager("Bill", 28974);
         Mechanic Brian = new Mechanic("Bob", 03476);
         Billing Jenny = new Billing(150, .30);
@@ -15,6 +20,6 @@ public class Main {
         Brian.viewWorkorder(workorder001);
         double total = Jenny.billWorkorder(workorder001);
         System.out.println("Total Due: $" + total);
-        Tamara.print();
+        Tamara.print();*/
     }
 }
