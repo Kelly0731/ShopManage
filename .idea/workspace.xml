@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ba9e5eb-3398-4fbb-9b89-cb4ced194660" name="Changes" comment="Developed the Inventory system">
-      <change afterPath="$PROJECT_DIR$/src/src/ShopManageUI.java" afterDir="false" />
+    <list default="true" id="0ba9e5eb-3398-4fbb-9b89-cb4ced194660" name="Changes" comment="Working on UI, taking a break">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/ShopManageUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ShopManageUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713748638945</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Working on UI, taking a break">
+      <option name="closed" value="true" />
+      <created>1714242956545</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714242956545</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +144,7 @@
     <MESSAGE value="No Clue" />
     <MESSAGE value="Workorder and billing and other random stuff" />
     <MESSAGE value="Developed the Inventory system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Developed the Inventory system" />
+    <MESSAGE value="Working on UI, taking a break" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on UI, taking a break" />
   </component>
 </project>

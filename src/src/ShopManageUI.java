@@ -10,6 +10,7 @@ public class ShopManageUI {
     private Scanner scanner;
 
     private List<Manager> managers;
+    private List<Workorder> workorders;
 
 
 
@@ -17,6 +18,7 @@ public class ShopManageUI {
     public ShopManageUI(InventoryManager inventoryManager) {
         this.inventoryManager = inventoryManager;
         this.managers = new ArrayList<>();
+        this.mechanics = new ArrayList<>();
         this.scanner = new Scanner(System.in);
     }
 
@@ -27,10 +29,13 @@ public class ShopManageUI {
             System.out.println("2. Process work order");
             System.out.println("3. Add manager");
             System.out.println("4. Print inventory");
-            System.out.println("5. Exit");
+            System.out.println("5. Add mechanic");
+            System.out.println("6. View work orders");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine();  // consume newline left-over
+
 
             switch (choice) {
                 case 1:
@@ -46,7 +51,13 @@ public class ShopManageUI {
                     printInventory();
                     break;
                 case 5:
-                    return;  // exit method, thus terminating the program
+                    addMechanic();
+                    break;
+                case 6:
+                    viewWorkOrders();
+                    break;
+                case 7:
+                  return;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 5.");
             }
@@ -89,7 +100,7 @@ public class ShopManageUI {
         scanner.nextLine();  // consume newline left-over
 
         // Create a new manager
-        Manager manager = new Manager("Manager Name", 12345);
+        Manager manager = new Manager("Jim", 001);
 
         // Create a work order
         Workorder workOrder = manager.createWorkOrder(number, customerName, vin, date);
@@ -102,6 +113,8 @@ public class ShopManageUI {
 
         // Approve the work order
         manager.approveWorkorder(workOrder);
+
+        workorders.add(workOrder);
 
         System.out.println("Work order processed successfully.");
     }
@@ -121,4 +134,28 @@ public class ShopManageUI {
 
         System.out.println("Manager added successfully.");
     }
+    private List<Mechanic> mechanics;
+
+    private void addMechanic() {
+        System.out.print("Enter mechanic name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter mechanic ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();  // consume newline left-over
+
+        Mechanic mechanic = new Mechanic(name, id);
+        mechanics.add(mechanic);
+
+        System.out.println("Mechanic added successfully.");
+    }
+    private void viewWorkOrders() {
+        if (workorders.isEmpty()) {
+            System.out.println("No work orders to display.");
+        } else {
+            for (Workorder workOrder : workorders) {
+                workOrder.print();
+            }
+        }
+    }
 }
+
