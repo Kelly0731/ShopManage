@@ -148,10 +148,6 @@ public class ShopManageUI {
         String dateInput = scanner.nextLine();
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateInput);
 
-        System.out.print("Enter mechanic ID: ");
-        int mechID = scanner.nextInt();
-        scanner.nextLine();  // consume newline left-over
-
 
 
         System.out.println("What is your position?");
@@ -185,18 +181,6 @@ public class ShopManageUI {
             default:
                 System.out.println("Invalid choice. Please enter a number between 1 and 2.");
         }
-
-
-
-
-        // Set wage for the work order
-
-
-        // Assign the work order to a mechanic
-        //manager.assignWorkorder(workOrder, mechID);
-
-        // Approve the work order
-        //manager.approveWorkorder(workOrder);
 
 
     }
