@@ -95,29 +95,56 @@ public class ShopManageUI {
         int mechID = scanner.nextInt();
         scanner.nextLine();  // consume newline left-over
 
-        System.out.print("Enter wage: ");
-        double wage = scanner.nextDouble();
-        scanner.nextLine();  // consume newline left-over
 
-        // Create a new manager
-        Manager manager = new Manager("Jim", 001);
 
-        // Create a work order
-        Workorder workOrder = manager.createWorkOrder(number, customerName, vin, date);
+        System.out.println("What is your position?");
+        System.out.println("1. Mechanic");
+        System.out.println("2. Manager");
+        int level = scanner.nextInt();
+        switch(level) {
+            case 1:
+                //Mechanic
+                System.out.println("What is your ID:");
+                int id = scanner.nextInt();
+                Workorder workOrder1 = findMechanic(id).createWorkOrder(number, customerName, vin, date);
+                workorders.add(workOrder1);
+
+                System.out.println("Work order created successfully.");
+                break;
+            case 2:
+                //Manager
+                System.out.println("What is your ID:");
+                int id1 = scanner.nextInt();
+                Workorder workOrder = findManager(id1).createWorkOrder(number, customerName, vin, date);
+
+
+                System.out.print("Enter wage: ");
+                double wage = scanner.nextDouble();
+                scanner.nextLine();  // consume newline left-over
+                findManager(id1).setWorkorderWage(workOrder, wage);
+                workorders.add(workOrder);
+
+                System.out.println("Work order created successfully.");
+            default:
+                System.out.println("Invalid choice. Please enter a number between 1 and 2.");
+        }
+
+
+
 
         // Set wage for the work order
-        manager.setWorkorderWage(workOrder, wage);
+        manager
 
         // Assign the work order to a mechanic
-        manager.assignWorkorder(workOrder, mechID);
+        //manager.assignWorkorder(workOrder, mechID);
 
         // Approve the work order
-        manager.approveWorkorder(workOrder);
+        //manager.approveWorkorder(workOrder);
 
-        workorders.add(workOrder);
 
-        System.out.println("Work order processed successfully.");
     }
+
+
 
     private void printInventory() {
         inventoryManager.print();
