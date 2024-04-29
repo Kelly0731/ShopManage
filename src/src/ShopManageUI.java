@@ -61,6 +61,15 @@ public class ShopManageUI {
                     viewWorkOrders();
                     break;
                 case 7:
+                    approveWorkOrder();
+                    break;
+                case 8:
+                    assignWorkOrder();
+                    break;
+                case 9:
+                    addItemtoWorkOrder();
+                    break;
+                case 10:
                   return;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 5.");
