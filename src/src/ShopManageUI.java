@@ -27,7 +27,7 @@ public class ShopManageUI {
         while (true) {
             System.out.println("Welcome to ShopManage!");
             System.out.println("1. Add inventory");
-            System.out.println("2. Process work order");
+            System.out.println("2. Create work order");
             System.out.println("3. Add manager");
             System.out.println("4. Print inventory");
             System.out.println("5. Add mechanic");
