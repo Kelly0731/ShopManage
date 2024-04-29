@@ -204,7 +204,7 @@ public class ShopManageUI {
 
         System.out.println("Manager added successfully.");
     }
-    private List<Mechanic> mechanics;
+
 
     private void addMechanic() {
         System.out.print("Enter mechanic name: ");
