@@ -63,6 +63,42 @@ public class ShopManageUI {
             }
         }
     }
+    private void approveWorkOrder() {
+        System.out.print("Enter manager ID: ");
+        int managerId = scanner.nextInt();
+        scanner.nextLine();  // consume newline left-over
+
+        System.out.print("Enter work order number: ");
+        int workOrderNumber = scanner.nextInt();
+        scanner.nextLine();  // consume newline left-over
+
+        Manager manager = findManagerById(managerId);
+        Workorder workOrder = findWorkOrderById(workOrderNumber);
+
+        if (manager != null && workOrder != null) {
+            manager.approveWorkorder(workOrder);
+            System.out.println("Work order approved successfully.");
+        } else {
+            System.out.println("Manager or work order not found.");
+        }
+    }
+
+    private Manager findManagerById(int id) {
+        for (Manager manager : managers) {
+            if (manager.getId() == id) {
+                return manager;
+            }
+        }
+        return null;
+    }
+    private Workorder findWorkOrderById(int number) {
+        for (Workorder workOrder : workorders) {
+            if (workOrder.getNumber() == number) {
+                return workOrder;
+            }
+        }
+        return null;
+    }
 
     private void addInventory() {
         System.out.print("Enter part name: ");
@@ -74,6 +110,14 @@ public class ShopManageUI {
         scanner.nextLine();  // consume newline left-over
 
         inventoryManager.addInventory(new Inventory(partName, partNumber, quantity));
+    }
+    private Mechanic findMechanic(int id) {
+        for (Mechanic mechanic : mechanics) {
+            if (mechanic.getId() == id) {
+                return mechanic;
+            }
+        }
+        return null;
     }
 
     private void processWorkOrder() throws ParseException {
@@ -115,13 +159,13 @@ public class ShopManageUI {
                 //Manager
                 System.out.println("What is your ID:");
                 int id1 = scanner.nextInt();
-                Workorder workOrder = findManager(id1).createWorkOrder(number, customerName, vin, date);
+                Workorder workOrder = findManagerById(id1).createWorkOrder(number, customerName, vin, date);
 
 
                 System.out.print("Enter wage: ");
                 double wage = scanner.nextDouble();
                 scanner.nextLine();  // consume newline left-over
-                findManager(id1).setWorkorderWage(workOrder, wage);
+                findManagerById(id1).setWorkorderWage(workOrder, wage);
                 workorders.add(workOrder);
 
                 System.out.println("Work order created successfully.");
@@ -133,7 +177,7 @@ public class ShopManageUI {
 
 
         // Set wage for the work order
-        manager
+
 
         // Assign the work order to a mechanic
         //manager.assignWorkorder(workOrder, mechID);

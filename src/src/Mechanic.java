@@ -14,7 +14,9 @@ public class Mechanic {
         Workorder workOrder = new Workorder(number, customerName, vin, date);
         return workOrder;
     }
-
+    public int getId() {
+        return this.id;
+    }
     public void viewWorkorder(Workorder w){
         w.print();
     }
