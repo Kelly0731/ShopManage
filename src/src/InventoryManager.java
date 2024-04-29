@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class InventoryManager {
 
+
     private ArrayList<Inventory> inventories;
 
     public InventoryManager() {

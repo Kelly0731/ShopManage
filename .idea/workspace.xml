@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ba9e5eb-3398-4fbb-9b89-cb4ced194660" name="Changes" comment="Developed the Inventory system">
+    <list default="true" id="0ba9e5eb-3398-4fbb-9b89-cb4ced194660" name="Changes" comment="createworkorder to require permission">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Inventory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/Workorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/Workorder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/InventoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/InventoryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,17 +24,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Array_Store" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "okonzel"
-  }
-}]]></component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -47,6 +37,14 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/src/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/src/Manager.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/src/Billing.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/src/Inventory.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/src/Workorder.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/src/Mechanic.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="2f9AyVUBpuGmW8l7IU0I7FvakS4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -54,27 +52,6 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "InventoryPrint",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
-  }
-}]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="ShopManag" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="ShopManag" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,15 +93,28 @@
       <option name="project" value="LOCAL" />
       <updated>1713747391530</updated>
     </task>
-    <task id="LOCAL-00005" summary="Developed the Inventory system">
-      <option name="closed" value="true" />
-      <created>1713748638945</created>
+    <task id="LOCAL-00005" summary="updated UI menu">
+      <created>1714355087641</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1713748638945</updated>
+      <updated>1714355087641</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated UI menu">
+      <created>1714355684184</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714355684184</updated>
+    </task>
+    <task id="LOCAL-00007" summary="createworkorder to require permission">
+      <created>1714357153941</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714357153941</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,13 +139,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Worked on several things" />
     <MESSAGE value="No Clue" />
     <MESSAGE value="Workorder and billing and other random stuff" />
-    <MESSAGE value="Developed the Inventory system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Developed the Inventory system" />
+    <MESSAGE value="updated UI menu" />
+    <MESSAGE value="createworkorder to require permission" />
+    <option name="LAST_COMMIT_MESSAGE" value="createworkorder to require permission" />
   </component>
 </project>
