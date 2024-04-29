@@ -241,5 +241,58 @@ public class ShopManageUI {
             }
         }
     }
+    private void assignWorkOrder() {
+        System.out.print("Enter mechanic ID: ");
+        int mechanicId = scanner.nextInt();
+        scanner.nextLine();  // consume newline left-over
+
+        System.out.print("Enter work order number: ");
+        int workOrderNumber = scanner.nextInt();
+        scanner.nextLine();  // consume newline left-over
+
+        Mechanic mechanic = findMechanic(mechanicId);
+        Workorder workOrder = findWorkOrderById(workOrderNumber);
+
+        if (mechanic != null && workOrder != null) {
+            workOrder.setMechanic(mechanicId);
+            System.out.println("Work order assigned successfully.");
+        } else {
+            System.out.println("Mechanic or work order not found.");
+        }
+    }
+    private void addItemtoWorkOrder() {
+        System.out.print("Enter work order number: ");
+        int workOrderNumber = scanner.nextInt();
+        scanner.nextLine();  // consume newline left-over
+
+        Workorder workOrder = findWorkOrderById(workOrderNumber);
+
+        if (workOrder != null) {
+            System.out.print("Enter part name: ");
+            String partName = scanner.nextLine();
+
+            System.out.print("Enter part number: ");
+            int partNumber = scanner.nextInt();
+            scanner.nextLine();  // consume newline left-over
+
+            System.out.print("Enter part price: ");
+            double partPrice = scanner.nextDouble();
+            scanner.nextLine();  // consume newline left-over
+
+            System.out.print("Enter labor cost: ");
+            double laborCost = scanner.nextDouble();
+            scanner.nextLine();  // consume newline left-over
+
+            System.out.print("Enter description: ");
+            String description = scanner.nextLine();
+
+            workOrder.addItem(partName, partNumber, partPrice, laborCost, description);
+            System.out.println("Item added to work order successfully.");
+        } else {
+            System.out.println("Work order not found.");
+        }
+    }
+
+
 }
 
