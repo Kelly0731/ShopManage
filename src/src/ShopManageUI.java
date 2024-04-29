@@ -96,7 +96,7 @@ public class ShopManageUI {
                 case 11:
                   return;
                 default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 10.");
+                    System.out.println("Invalid choice. Please enter a number between 1 and 11.");
             }
         }
     }
@@ -113,7 +113,12 @@ public class ShopManageUI {
         Workorder workOrder = findWorkOrderById(workOrderNumber);
 
         if (manager != null && workOrder != null) {
+            System.out.print("Set wage: ");
+            double wage = scanner.nextDouble();
+            scanner.nextLine();  // consume newline left-over
+           manager.setWorkorderWage(workOrder, wage);
             manager.approveWorkorder(workOrder);
+
             System.out.println("Work order approved successfully.");
         } else {
             System.out.println("Manager or work order not found.");
@@ -288,21 +293,21 @@ public class ShopManageUI {
             double partPrice = scanner.nextDouble();
             scanner.nextLine();  // consume newline left-over
 
-            System.out.print("Enter labor cost: ");
-            double laborCost = scanner.nextDouble();
+            System.out.print("Enter hours worked: ");
+            double hoursWorked = scanner.nextDouble();
             scanner.nextLine();  // consume newline left-over
 
             System.out.print("Enter description: ");
             String description = scanner.nextLine();
 
-            workOrder.addItem(partName, partNumber, partPrice, laborCost, description);
+            workOrder.addItem(partName, partNumber, partPrice, hoursWorked, description);
             System.out.println("Item added to work order successfully.");
         } else {
             System.out.println("Work order not found.");
         }
     }
     private void pressAnyKeyToContinue() {
-        System.out.println("Press any key to continue...");
+        System.out.println("Press enter to continue...");
         scanner.nextLine();
     }
     public void billWorkOrder() {

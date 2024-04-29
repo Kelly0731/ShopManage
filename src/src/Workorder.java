@@ -14,7 +14,7 @@ public class Workorder {
     private int mechanic;
     private boolean approved = false;
     private int pointer = 0;
-    private double wage;
+    private double wage=-1;
 
     public Workorder(int number, String customerName, String vin, Date date) {
         this.number = number;
