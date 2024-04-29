@@ -9,7 +9,7 @@ import java.util.List;
 public class ShopManageUI {
     private InventoryManager inventoryManager;
     private Scanner scanner;
-
+    private Billing billing= new Billing(100,1.30);
     private List<Manager> managers;
     private List<Workorder> workorders;
     private List<Mechanic> mechanics;
@@ -37,7 +37,8 @@ public class ShopManageUI {
             System.out.println("7. Approve Work Order");
             System.out.println("8. Assign Work Order");
             System.out.println("9. Add Item to Workorder");
-            System.out.println("10. Exit");
+            System.out.println("10. Bill Work Order");
+            System.out.println("11. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine();  // consume newline left-over
@@ -46,35 +47,56 @@ public class ShopManageUI {
             switch (choice) {
                 case 1:
                     addInventory();
+                    pressAnyKeyToContinue();
                     break;
                 case 2:
                     processWorkOrder();
+                    pressAnyKeyToContinue();
                     break;
                 case 3:
                     addManager();
+                    pressAnyKeyToContinue();
+
                     break;
                 case 4:
                     printInventory();
+                    pressAnyKeyToContinue();
+
                     break;
                 case 5:
                     addMechanic();
+                    pressAnyKeyToContinue();
+
                     break;
                 case 6:
                     viewWorkOrders();
+                    pressAnyKeyToContinue();
+
                     break;
                 case 7:
                     approveWorkOrder();
+                    pressAnyKeyToContinue();
+
                     break;
                 case 8:
                     assignWorkOrder();
+                    pressAnyKeyToContinue();
+
                     break;
                 case 9:
                     addItemtoWorkOrder();
+                    pressAnyKeyToContinue();
+
                     break;
                 case 10:
+                    billWorkOrder();
+                    pressAnyKeyToContinue();
+
+                    break;
+                case 11:
                   return;
                 default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 5.");
+                    System.out.println("Invalid choice. Please enter a number between 1 and 10.");
             }
         }
     }
@@ -180,6 +202,7 @@ public class ShopManageUI {
                 workorders.add(workOrder);
 
                 System.out.println("Work order created successfully.");
+                break;
             default:
                 System.out.println("Invalid choice. Please enter a number between 1 and 2.");
         }
@@ -274,6 +297,28 @@ public class ShopManageUI {
 
             workOrder.addItem(partName, partNumber, partPrice, laborCost, description);
             System.out.println("Item added to work order successfully.");
+        } else {
+            System.out.println("Work order not found.");
+        }
+    }
+    private void pressAnyKeyToContinue() {
+        System.out.println("Press any key to continue...");
+        scanner.nextLine();
+    }
+    public void billWorkOrder() {
+        System.out.print("Enter work order number: ");
+        int workOrderNumber = scanner.nextInt();
+        scanner.nextLine();  // consume newline left-over
+
+        Workorder workOrder = findWorkOrderById(workOrderNumber);
+
+        if (workOrder != null) {
+            if (workOrder.isApproved()) {
+                double totalCost = billing.billWorkorder(workOrder);
+                System.out.println("Total cost for work order " + workOrderNumber + ": $" + totalCost);
+            } else {
+                System.out.println("Work order is not approved and cannot be billed.");
+            }
         } else {
             System.out.println("Work order not found.");
         }
