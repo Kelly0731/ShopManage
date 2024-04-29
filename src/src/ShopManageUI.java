@@ -12,6 +12,7 @@ public class ShopManageUI {
 
     private List<Manager> managers;
     private List<Workorder> workorders;
+    private List<Mechanic> mechanics;
 
 
 
@@ -20,6 +21,7 @@ public class ShopManageUI {
         this.inventoryManager = inventoryManager;
         this.managers = new ArrayList<>();
         this.mechanics = new ArrayList<>();
+        this.workorders = new ArrayList<>();
         this.scanner = new Scanner(System.in);
     }
 
