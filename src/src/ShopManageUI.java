@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+//Is it working
 public class ShopManageUI {
     private InventoryManager inventoryManager;
     private Scanner scanner;
@@ -162,13 +163,13 @@ public class ShopManageUI {
                 //Manager
                 System.out.println("What is your ID:");
                 int id1 = scanner.nextInt();
-                Workorder workOrder = findManager(id1).createWorkOrder(number, customerName, vin, date);
+                Workorder workOrder = findManagerById(id1).createWorkOrder(number, customerName, vin, date);
 
 
                 System.out.print("Enter wage: ");
                 double wage = scanner.nextDouble();
                 scanner.nextLine();  // consume newline left-over
-                findManager(id1).setWorkorderWage(workOrder, wage);
+                findManagerById(id1).setWorkorderWage(workOrder, wage);
                 workorders.add(workOrder);
 
                 System.out.println("Work order created successfully.");
